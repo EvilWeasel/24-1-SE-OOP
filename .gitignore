@@ -1,3 +1,4 @@
 **/obj
 **/bin
-**/log.*
+**/log*.txt
+**/log*.json
