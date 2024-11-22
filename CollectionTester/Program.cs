@@ -59,7 +59,24 @@ for (int i = 0; i < myStringList.Count; i++)
   Console.WriteLine(myStringList[i]);
 }
 
-// foreach (var x in myStringList)
-// {
-//
-// }
+Console.WriteLine("---Implemented-IEnumerable---");
+foreach (var x in myStringList)
+{
+  Console.WriteLine(x);
+}
+
+Console.WriteLine("---how-does-in-work?---");
+
+var enumerator = myStringList.GetEnumerator();
+while (enumerator.MoveNext())
+{
+  Console.WriteLine(enumerator.Current);
+}
+
+Console.WriteLine("---LINQ-Methods-available---");
+// Enumerables are lazy-evaluated
+var filteredNumbers = myList.Where(x => x > 1);
+foreach (var x in filteredNumbers)
+{
+  Console.WriteLine(x);
+}

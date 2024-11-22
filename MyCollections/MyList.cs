@@ -1,4 +1,6 @@
-﻿namespace MyCollections;
+﻿using System.Collections;
+
+namespace MyCollections;
 
 internal class Node<T>
 {
@@ -11,7 +13,7 @@ internal class Node<T>
   }
 }
 
-public class MyList<T>
+public class MyList<T> : IEnumerable<T>
 {
   private Node<T>? head;
   // private set restricts changes to Count to only this class
@@ -86,5 +88,21 @@ public class MyList<T>
     }
 
     throw new IndexOutOfRangeException();
+  }
+
+  public IEnumerator<T> GetEnumerator()
+  {
+    Node<T>? current = head;
+
+    while (current != null)
+    {
+      yield return current.Value; // Return current value; remember the current loop iteration
+      current = current.Next;
+    }
+  }
+
+  IEnumerator IEnumerable.GetEnumerator()
+  {
+    return GetEnumerator();
   }
 }

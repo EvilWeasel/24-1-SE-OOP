@@ -8,7 +8,7 @@ namespace Interfaces;
 /// Klasse / Struct, welche beschreibt welche Methoden/Eigenschaften
 /// diese haben müssen, aber nicht wie diese sein müssen.
 /// </summary>
-public interface FileHandler
+public interface IFileHandler
 {
   public string FilePath { get; set; }
   public void DeleteFile();

@@ -2,11 +2,11 @@ namespace Interfaces;
 
 public class OrderService
 {
-  private BaseLogger logger;
+  private IBaseLogger logger;
 
   /* Das hier ist ein konkretes Beispiel für das Designpattern "Dependency-Injection"
   Mit DI lassen sich Abhängigkeiten aus einer Klasse heraus extrahieren und auf den Caller / Nutzer der Klasse übertragen. */
-  public OrderService(BaseLogger logger)
+  public OrderService(IBaseLogger logger)
   {
     this.logger = logger;
   }
